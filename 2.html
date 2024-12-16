@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body{
+				background: url(任务一素材/img/background.png)no-repeat fixed;
+				background-size: 100% 100%;
+			}
+			@font-face{
+				font-family: myfont;
+				src: url("./任务一素材/fonts/season.ttf");
+			}
+			h1{
+				font-family: "myfont";
+				color: #ff557f;
+				margin: 20px;
+				font-size: 50px;
+			}
+			article{
+				border: #55aa00 2px dotted;
+				border-radius: 15px;
+				margin: 12px auto;
+			}
+			section{
+				width: 85%;
+				margin: 16px 20px;
+			}
+			img{
+				width: 80px;
+				margin: 0px 10px;
+			}
+			section img{
+				transition: all 1s linear;
+			}
+		
+			.b{
+				position: absolute;
+				width: 40px;
+				top: 50%;
+				left: 0;
+				transform: translate(100%, -50%);
+				animation: b 3s ease-in-out both;
+			}
+			@keyframes  b{
+				0%{
+					width: 40px;
+					top: 50%;
+					left: 0;
+					transform: translate(100%,-50%);
+				}
+				
+				100%{
+					width: 80px;
+					top:0%;
+					left: 80%;
+					transform: translate(-110%, 10%);
+				}
+			}
+			.a{
+				width: 40%;
+				max-width: 500px;
+				position: fixed;
+				right: 0px;
+				top: -10px;
+				transform-origin: top right;
+				animation: a 5s ease-in-out infinite;
+			}
+
+			@keyframes a{
+				0%{
+					transform: skewX(-10deg);
+				}
+				50%{
+					transform: skewX(10deg);
+				}
+				100%{
+					transform: skewX(-10deg);
+				}
+			}
+			
+		</style>
+		<meta charset="utf-8">
+		<meta name="viewport"content="width=device-width,initial,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>春季</title>
+	</head>
+	<body>
+		<header><h1 align="center">春  季</h1></header>
+		<article>
+			<section><img src="任务一素材/img/lc.png " align="left">立春，为二十四节气之首。立，是“开始”之意；春，代表着温暖、生长。</p ></section>
+			<section><img src="任务一素材/img/ys.png"align="left"><p>雨水节气标示着降雨开始，适宜的降水对农作物的生长很重要。</p></section>
+			<section><img src="任务一素材/img/jz.png"align="left"><p>春分又称“日中““日夜分”“仲春之月”升分”等。</p></section>
+			<section><img src="任务一素材/img/cf.png"align="left"><p>春分又称“日中““日夜分”“仲春之月”“升分”等。</p></section>
+			<section><img src="任务一素材/img/qm.png"align="left"><p>清明，是气清景明的意思。它是反映自然界物候变化的节气。</p></section>
+			<section><img src="任务一素材/img/gy.png"align="left"><p>谷雨是“雨生百谷”的意思，此时降水明显增加，田中的秧苗初插、作物新种，最需要雨水的滋润。</p></section>
+			<img class="b" src="任务一素材/img/bird.png">
+		</article>
+		    <img class="a" src="任务一素材/img/lt.png">
+			<audio loop id="miss">
+				<source src="./任务一素材/2106012697.mp3">
+			</audio>
+	</body>
+	<script>
+		 const img = document.querySelectorAll("article section img");
+		    const arr = [1, 1, 1, 1, 1, 1];
+		
+		    for (let i = 0; i < img.length; i++) {
+		        img[i].addEventListener("click", () => {
+		            img[i].style.transform = `rotate(${360 * arr[i]}deg)`;
+		            arr[i] += 1;
+		        });
+		    };
+	window.addEventListener("click",()=>{document.querySelector("#miss").play();})
+	</script>
+	
+</html>
